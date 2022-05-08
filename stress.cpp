@@ -2,7 +2,7 @@
 #include "naive.hpp"
 #include "efficient.hpp"
 
-int ARRAY_SIZE = 100;
+int ARRAY_SIZE = 10;
 
 std::vector<std::vector<std::vector <int>>> generate_random_3d_matrix()
 {
@@ -41,21 +41,21 @@ int main(int argc, char **argv)
         
         /*************** if want to show the 3d matrix **************************/
 
-        // int depth = matrix3d.size(); 
-        // int height = matrix3d[0].size(); 
-        // int width = matrix3d[0][0].size();
-        //  for(int i=0;i<depth;i++)
-        //     {
-        //         for(int j=0;j<height;j++)
-        //         {
-        //             for(int k=0;k<width;k++)
-        //             {
-        //                 std::cout<<matrix3d[i][j][k]<<" ";
-        //             }
-        //             std::cout<<std::endl;
-        //         }
-        //         std::cout<<std::endl;
-        //     }
+        int depth = matrix3d.size(); 
+        int height = matrix3d[0].size(); 
+        int width = matrix3d[0][0].size();
+         for(int i=0;i<depth;i++)
+            {
+                for(int j=0;j<height;j++)
+                {
+                    for(int k=0;k<width;k++)
+                    {
+                        std::cout<<matrix3d[i][j][k]<<" ";
+                    }
+                    std::cout<<std::endl;
+                }
+                std::cout<<std::endl;
+            }
         /***********************************************************************/
 
 
