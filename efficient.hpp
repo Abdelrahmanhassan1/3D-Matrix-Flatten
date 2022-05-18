@@ -19,10 +19,12 @@ std::vector<int> efficient_matrix_flatter(std::vector<std::vector<std::vector <i
             for(int k=0;k<width;k++)
             {
                 int index = get_index(i, j, k, width, height);
+                vector_1d.push_back(matrix[i][j][k]);
                 // what to do here ?
             }
         }
     }
+                std::cout<<"\n \n";
     return vector_1d;
 
 }

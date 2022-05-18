@@ -1,19 +1,41 @@
 import pprint
-
-matrix = [[[0, 1, 0], [0, 5, 0], [0, 0, 0]],
-          [[0, 2, 0], [0, 0, 0], [0, 0, 0]],
-          [[0, 0, 0], [0, 0, 0], [0, 0, 0]]]
-
-vector = []
-
-for i_index in range(len(matrix)):
-
-    for j_index in range(len(matrix[i_index])):
-
-        for k_index in range(len(matrix[i_index][j_index])):
-
-            vector.append(matrix[i_index][j_index][k_index])
+import numpy as np
 
 
-pprint.pprint(matrix)
-pprint.pprint(vector)
+class matrix2vector:
+    def __init__(self, n, m, p):
+        self.depth = n
+        self.width = m
+        self.height = p
+        self.size1d = n * m * p
+        self.matrix3d = np.empty(
+            (self.depth, self.width, self.height), dtype=object)
+        self.vector1d = np.empty(self.size1d, dtype=object)
+
+    def show_vector(self):
+        pprint.pprint(self.matrix3d)
+        pprint.pprint(self.vector1d)
+
+    def get_1d_index(self, i, j, k):
+        return ((i * self.width * self.height) + (j * self.height) + k)
+
+    def set_element_value(self, i, j, k, value):
+        self.matrix3d[i][j][k] = value
+        index = self.get_1d_index(i, j, k)
+        self.vector1d[index] = value
+
+    def get_element(self, i, j, k):
+        index = self.get_1d_index(i, j, k)
+        return self.vector1d[index]
+
+    def fill_matrix(self, number):
+        self.matrix3d.fill(number)
+        self.vector1d.fill(number)
+
+
+obj1 = matrix2vector(2, 2, 2)
+obj1.set_element_value(0, 0, 1, 9)
+obj1.set_element_value(0, 1, 1, 6)
+obj1.set_element_value(1, 0, 1, 7)
+obj1.fill_matrix(2)
+obj1.show_vector()
