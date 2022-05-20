@@ -157,7 +157,7 @@ int main(void)
             int i,j,k;
             std::cout<<"Enter location indices i, j, k : ";
             std::cin>>i>>j>>k;
-            std::cout<<"The index in 1D vector -> "<<obj1.get_index(i,j,k);
+            std::cout<<"The index in 1D vector -> "<<obj1.get_index(i,j,k)<<"\n";
         }
         else if (option == 0)
         {

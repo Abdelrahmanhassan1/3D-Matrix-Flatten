@@ -22,4 +22,4 @@ g++ matrix_faltter.cpp
 
 > Demo Video:
 
-<img src="./docs/">
+<img src="./docs/application.gif" >
