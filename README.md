@@ -2,11 +2,24 @@
 
 Program to flatten 3D matrix into 1D vector
 
-### Here Implemented Two Algorithms
+### Here Implemented A class for the 3D matrix and methods to convert to 1D vector
 
-1. Naive Algorithm
-2. Efficient Algorithm
+#### After Running the application you have the ability to build your own matrix and access some operations:
 
-### Implemented Also Stress File to create random data and check the time for each algorithm
+1. initialize each element in the matrix.
+2. initialize the whole elements with the same value.
+3. set value at specific location.
+4. print the matrix.
+5. print the 1d vector.
+6. get the index of location at 3d matrix in the 1d vector.
+
+### To run the App:
+
+```
+g++ matrix_faltter.cpp
+./matrix_faltter
+```
 
 > Demo Video:
+
+<img src="./docs/">
