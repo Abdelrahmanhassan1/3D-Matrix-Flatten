@@ -98,9 +98,8 @@ class matrix2vector
             return (*vector_3d)[i][j][k];
         }
 
-        int get_element_value_from_1d_vector(int i, int j, int k)
+        int get_element_value_from_1d_vector(int index)
         {
-            int index = get_index(i, j, k);
             return (*vector_1d)[index];
         }
 
@@ -179,14 +178,16 @@ int main(void)
             std::cout<<"----------------------------------------\n"; 
             int i,j,k;
             std::cout<<"Enter location indices i, j, k : ";
-            std::cout<<"The element at index "<<i<<" "<<j<<" "<<k << " : "<<obj1.get_element_value_from_3d_matrix(i,j,k);
+            std::cin>>i>>j>>k;
+            std::cout<<"The element at index "<<i<<" "<<j<<" "<<k << " : "<<obj1.get_element_value_from_3d_matrix(i,j,k)<<"\n";
         }
         else if (option == 8)
         {
             std::cout<<"----------------------------------------\n"; 
-            int i,j,k;
-            std::cout<<"Enter location indices i, j, k : ";
-            std::cout<<"The element at index "<<i<<" "<<j<<" "<<k << " : "<<obj1.get_element_value_from_1d_vector(i,j,k);
+            int index;
+            std::cout<<"Enter location index: ";
+            std::cin>>index;
+            std::cout<<"The element at index "<<index<<" : "<<obj1.get_element_value_from_1d_vector(index-1)<<"\n";
         }
         std::cout<<"----------------------------------------\n";   
         std::cout<<"To continue -> (9) \n";

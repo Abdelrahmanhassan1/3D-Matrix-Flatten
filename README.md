@@ -12,6 +12,8 @@ Program to flatten 3D matrix into 1D vector
 4. print the matrix.
 5. print the 1d vector.
 6. get the index of location at 3d matrix in the 1d vector.
+7. get the element from 3d matrix given the 3 indices.
+8. get the element from 1d vector given the index.
 
 ### To run the App:
 
