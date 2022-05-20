@@ -31,11 +31,3 @@ class matrix2vector:
     def fill_matrix(self, number):
         self.matrix3d.fill(number)
         self.vector1d.fill(number)
-
-
-obj1 = matrix2vector(2, 2, 2)
-obj1.set_element_value(0, 0, 1, 9)
-obj1.set_element_value(0, 1, 1, 6)
-obj1.set_element_value(1, 0, 1, 7)
-obj1.fill_matrix(2)
-obj1.show_vector()
