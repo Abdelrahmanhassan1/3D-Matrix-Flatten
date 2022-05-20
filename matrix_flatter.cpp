@@ -19,6 +19,7 @@ class matrix2vector
             vector_1d = new std::vector<int>(size_1d,0);
             vector_3d = new std::vector<std::vector<std::vector<int>>>(depth, std::vector<std::vector<int>>(rows, std::vector<int>(cols, 0)));
         }
+        
         void initalize_matrix()
         {
             for(int i=0;i<depth;i++)
@@ -37,6 +38,7 @@ class matrix2vector
                 }   
             }
         }
+        
         void initalize_matrix_with_same_value(int value)
         {
 
@@ -91,6 +93,17 @@ class matrix2vector
 
         }
 
+        int get_element_value_from_3d_matrix(int i, int j, int k)
+        {
+            return (*vector_3d)[i][j][k];
+        }
+
+        int get_element_value_from_1d_vector(int i, int j, int k)
+        {
+            int index = get_index(i, j, k);
+            return (*vector_1d)[index];
+        }
+
         int get_index(int i,int j,int k){
             return ((i*rows*cols) + (j*cols) + k);
         }
@@ -114,6 +127,8 @@ int main(void)
         std::cout<<"print 3D matrix -> (4) \n";
         std::cout<<"print 1D vector -> (5) \n";
         std::cout<<"1D vector index of 3d matrix location -> (6) \n";
+        std::cout<<"get element from matrix -> (7) \n";
+        std::cout<<"get element from vector -> (8) \n";
         std::cout<<">> ";
         
         std::cin>>option;
@@ -159,9 +174,19 @@ int main(void)
             std::cin>>i>>j>>k;
             std::cout<<"The index in 1D vector -> "<<obj1.get_index(i,j,k)<<"\n";
         }
-        else if (option == 0)
+        else if (option == 7)
         {
-            break;
+            std::cout<<"----------------------------------------\n"; 
+            int i,j,k;
+            std::cout<<"Enter location indices i, j, k : ";
+            std::cout<<"The element at index "<<i<<" "<<j<<" "<<k << " : "<<obj1.get_element_value_from_3d_matrix(i,j,k);
+        }
+        else if (option == 8)
+        {
+            std::cout<<"----------------------------------------\n"; 
+            int i,j,k;
+            std::cout<<"Enter location indices i, j, k : ";
+            std::cout<<"The element at index "<<i<<" "<<j<<" "<<k << " : "<<obj1.get_element_value_from_1d_vector(i,j,k);
         }
         std::cout<<"----------------------------------------\n";   
         std::cout<<"To continue -> (9) \n";
